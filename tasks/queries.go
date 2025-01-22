@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/v240"
 )
 
 const (

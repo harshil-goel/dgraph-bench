@@ -8,9 +8,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dgraph-io/dgo"
-	"github.com/dgraph-io/dgo/protos/api"
-	"github.com/linuxerwang/dgraph-bench/tasks"
+	"github.com/dgraph-io/dgo/v240"
+	"github.com/dgraph-io/dgo/v240/protos/api"
+	"github.com/harshil-goel/dgraph-bench/tasks"
 	"google.golang.org/grpc"
 	yaml "gopkg.in/yaml.v2"
 )

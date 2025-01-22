@@ -9,11 +9,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/linuxerwang/dgraph-bench/tasks"
+	"github.com/harshil-goel/dgraph-bench/tasks"
 )
 
 const (
-	maxUid           = 10000000
+	maxUid           = 100000
 	maxDirectFriends = 1000
 
 	k = 100
@@ -29,12 +29,13 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	r := rand.New(rand.NewSource(time.Now().Unix()))
 
 	w := gzip.NewWriter(f)
 	for i := 1; i <= maxUid; i++ {
 		meID := fmt.Sprintf("_:m.%d", i)
 		writeNQuad(w, meID, "xid", fmt.Sprintf("\"%d\"", i))
-		writeNQuad(w, meID, "name", fmt.Sprintf("\"%s\"", tasks.RandString(10)))
+		writeNQuad(w, meID, "name", fmt.Sprintf("\"%s\"", tasks.RandString(10, r)))
 		writeNQuad(w, meID, "age", fmt.Sprintf("\"%d\"", 18+rand.Intn(80)))
 		writeNQuad(w, meID, "created_at", fmt.Sprintf("\"%d\"", time.Now().UnixNano()))
 		writeNQuad(w, meID, "updated_at", fmt.Sprintf("\"%d\"", time.Now().UnixNano()))

@@ -6,7 +6,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dgraph-io/dgo"
+	"github.com/dgraph-io/dgo/v240"
 )
 
 // BenchmarkCase ...

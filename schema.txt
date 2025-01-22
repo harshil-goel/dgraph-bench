@@ -3,4 +3,4 @@ name: string @index(term, fulltext) .
 type: int  .
 updated_at: int  .
 xid: string @index(exact)  .
-friend_of: uid @count @reverse .
+friend_of: uid @reverse .
