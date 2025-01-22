@@ -14,6 +14,9 @@ services:
       - '3000:3000'
     networks:
       - monitoring
+    volumes:
+      - ./grafana/dashboard.yaml:/etc/grafana/provisioning/dashboards/main.yaml
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
 
   prometheus:
     image: prom/prometheus:latest
