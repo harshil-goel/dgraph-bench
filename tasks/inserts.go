@@ -61,7 +61,6 @@ func InsertFriend(dgraphCli *dgo.Dgraph, r *rand.Rand) error {
 	as, err := txn.Mutate(context.Background(), mu)
 	if err != nil {
 		counters.WithLabelValues("insert-friend", "ERROR").Inc()
-		fmt.Printf("Failed to call mutate: %v\n", err)
 		return err
 	}
 
@@ -102,7 +101,6 @@ func InsertPerson(dgraphCli *dgo.Dgraph, r *rand.Rand) error {
 	as, err := txn.Mutate(context.Background(), mu)
 	if err != nil {
 		counters.WithLabelValues("insert-person", "ERROR").Inc()
-		fmt.Printf("Failed to call mutate: %v\n", err)
 		return err
 	}
 
